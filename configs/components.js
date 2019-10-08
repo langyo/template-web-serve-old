@@ -1,4 +1,4 @@
-const requireFunc = require.context('./components', true, /\.js$/);
+const requireFunc = require.context('../components', true, /\.js$/);
 
 let components = {};
 requireFunc.keys().forEach(key => {

@@ -1,4 +1,4 @@
-import socket from '../../socket';
+import socket from '../../configs/socket';
 
 export const mapStateToProps = (state) => ({
   ...state.pages.message,

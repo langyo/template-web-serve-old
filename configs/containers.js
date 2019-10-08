@@ -1,4 +1,4 @@
-const requireFunc = require.context('./containers', true, /\.js$/);
+const requireFunc = require.context('../containers', true, /\.js$/);
 
 let containers = {};
 requireFunc.keys().forEach(key => {

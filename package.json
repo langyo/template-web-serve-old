@@ -3,8 +3,9 @@
   "author": "langyo",
   "license": "Apache-2.0",
   "scripts": {
-    "watch": "webpack-dev-server --config ./webpack.config.js",
-    "build": "webpack --config ./webpack.config.js",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
     "test": "jest --watch"
   },
   "dependencies": {
@@ -23,6 +24,7 @@
     "babel-loader": "^8.0.6",
     "classnames": "^2.2.6",
     "minimist": "^1.2.0",
+    "next": "^9.1.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-desktop": "^0.3.9",

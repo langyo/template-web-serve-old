@@ -11,8 +11,8 @@ import Drawer from '../../containers/views/drawer';
 
 import { connect } from 'react-redux';
 
-import components from '../../components';
-import containers from '../../containers';
+import components from '../../configs/components';
+import containers from '../../configs/containers';
 
 let pages = {};
 Object.keys(containers.pages).forEach(key =>

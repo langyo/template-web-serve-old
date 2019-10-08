@@ -1,7 +1,7 @@
-import initStore from './configs/initStore';
+import initStore from './initStore';
 import socket from './socket';
 
-const requireFunc = require.context('./reducers', true, /\.js$/);
+const requireFunc = require.context('../reducers', true, /\.js$/);
 let reducers = {};
 
 requireFunc.keys().forEach(key => {
