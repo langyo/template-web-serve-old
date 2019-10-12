@@ -1,9 +1,10 @@
 import React from 'react';
+
 import Head from 'next/head';
 import { Provider } from 'react-redux';
 
-import Main from '../containers/views/main';
-import store from '../configs/store';
+import store from '../configs/pages/index/store';
+import Main from '../containers/pages/index/main';
 
 export default () => (
   <div>
@@ -13,8 +14,8 @@ export default () => (
       <meta name='viewport' content='initial-scale=1.0, width=device-width' />
     </Head>
 
-    <Provider store={store}>
+    <Provider store={store('index')}>
       <Main />
     </Provider>
   </div>
-)
+);

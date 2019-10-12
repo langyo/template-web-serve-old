@@ -1,11 +1,12 @@
-import initStore from './initStore';
+import initStore from './pages/index/initStore';
 import socket from './socket';
 
-const requireFunc = require.context('../reducers', true, /\.js$/);
+const requireFunc = require.context('../actions', true, /\.js$/);
 let reducers = {};
 
 requireFunc.keys().forEach(key => {
   let path = /^\.\/(.*)\.js$/.exec(key)[1].split('/');
+  let pageName = path.shift();
   const dfs = obj => {
     let head = path.shift();
     if (path.length > 0) {
@@ -16,7 +17,8 @@ requireFunc.keys().forEach(key => {
     }
     return obj;
   }
-  reducers = dfs(reducers);
+  if(!reducers[pageName]) reducers[pageName] = {};
+  reducers[pageName] = dfs(reducers[pageName]);
 });
 
 const merge = (left, right) => {
@@ -34,7 +36,7 @@ const get = (obj, path) => {
   return get(obj[next], path);
 }
 
-export default (state, action) => {
+export default pageName => (state, action) => {
   // Initialize the state.
   if (!state) return initStore;
   state = Object.assign(new Object(), state);
@@ -43,7 +45,7 @@ export default (state, action) => {
   let path = action.type.split('.');
 
   // Get the reducer.
-  let reducer = get(reducers, path);
+  let reducer = get(reducers[pageName], path);
 
   // Run the reducer.
   let ret = reducer.default(state, action, socket);

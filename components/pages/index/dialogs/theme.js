@@ -22,7 +22,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Avatar from '@material-ui/core/Avatar';
 
-import config from '../../configs/initTheme';
+import config from '../../../../configs/pages/index/initTheme';
 
 const styles = theme => ({
   text: {
