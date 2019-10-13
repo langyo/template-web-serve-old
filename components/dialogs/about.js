@@ -25,6 +25,7 @@ class About extends React.Component {
   static propTypes = {
     // State
     show: PropTypes.bool,
+    context: PropTypes.string,
     // Dispatcher
     onClose: PropTypes.func
   }
@@ -43,10 +44,7 @@ class About extends React.Component {
         <DialogTitle>关于</DialogTitle>
         <DialogContent>
           <Typography paragraph variant='body1'>
-            模板
-          </Typography>
-          <Typography paragraph variant='body1' className={classes.textAlignRight}>
-            模板
+            {this.props.context}
           </Typography>
         </DialogContent>
         <DialogActions>

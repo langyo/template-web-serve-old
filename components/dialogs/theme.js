@@ -10,9 +10,7 @@ import Grow from '@material-ui/core/Grow';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
 import Tabs from '@material-ui/core/Tabs';
@@ -22,7 +20,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Avatar from '@material-ui/core/Avatar';
 
-import config from '../../../../configs/pages/index/initTheme';
+import themes from '../../global/themes';
 
 const styles = theme => ({
   text: {
@@ -70,7 +68,7 @@ class Theme extends React.Component {
           </Tabs>
           <List>
             {
-              config.themes.map(n => {
+              themes.map(n => {
                   let onClick, selecting;
                   switch(this.state.selecting) {
                     case 0:

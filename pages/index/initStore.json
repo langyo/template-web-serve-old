@@ -1,0 +1,16 @@
+{
+  "drawer": {
+    "show": "main",
+    "open": false
+  },
+  "dialog": {
+    "show": ""
+  },
+  "theme": {
+    "color": "#66CCFF",
+    "language": "zh-chs"
+  },
+  "data" : {
+    "count": 0
+  }
+}
